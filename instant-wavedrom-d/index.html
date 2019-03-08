@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+
+    <script src="node_modules/wavedrom/skins/default.js"></script>
+    <script src="node_modules/wavedrom/wavedrom.js"></script>
+
+    <script src="wd-save.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:8091/');
+        socket.on('connect', function () {
+        socket.on('newContent', function(newHTML) {
+            document.querySelector("#InputJSON_0").innerHTML = newHTML;
+            WaveDrom.EditorRefresh();
+        });
+        socket.on('die', function(newHTML) {
+            window.open('', '_self', '');
+            window.close();
+
+            var firefoxWarning =
+            "<h1>Oops!</h1>" +
+            "<h3>Firefox doesn't allow windows to self-close.</h3>" +
+            "<h3>If you want the preview window to close automatically like in other browsers, go to about:config and set dom.allow_scripts_to_close_windows to true.</h3>"
+            document.body.innerHTML = firefoxWarning;
+        });
+        });
+    </script>
+</head>
+<body>
+    <input style="display: none" id="fileDialogSVG" type="file" nwsaveas="wavedrom.svg" />
+    <input style="display: none" id="fileDialogPNG" type="file" nwsaveas="wavedrom.png" />
+
+    <textarea id="InputJSON_0" style="display: none; width: 100%; height: 200px; margin-bottom: 20px"></textarea>
+    <div id="WaveDrom_Display_0"></div>
+
+    <button type="button" onclick="WaveDrom.saveSVG(event)">SVG</button>
+    <button type="button" onclick="WaveDrom.savePNG(event)">PNG</button>
+</body>
+</html>

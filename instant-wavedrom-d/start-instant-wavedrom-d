@@ -1,0 +1,11 @@
+#!/bin/sh
+
+IWD_DIR="`dirname $0`"
+
+if [ ! -d "${IWD_DIR}/node_modules" ]; then
+    pushd $IWD_DIR
+    npm install
+    popd
+fi
+
+$IWD_DIR/instant-wavedrom-d

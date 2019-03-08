@@ -1,0 +1,45 @@
+{
+  "_from": "instant-wavedrom-d",
+  "_id": "instant-wavedrom-d@0.1.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/instant-wavedrom-d",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "instant-wavedrom-d",
+    "name": "instant-wavedrom-d",
+    "escapedName": "instant-wavedrom-d",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "",
+  "_shasum": "",
+  "_spec": "instant-wavedrom-d",
+  "author": {
+    "name": "Joe Colosimo",
+    "email": "mailfor@jwcxz.com"
+  },
+  "bin": {
+    "instant-wavedrom-d": "./instant-wavedrom-d"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "wavedrom": "",
+    "send": "~0.1.0",
+    "socket.io": ""
+  },
+  "deprecated": false,
+  "description": "Instantly-updating Wavedrom Server",
+  "engine": "node",
+  "main": "instant-wavedrom-d",
+  "name": "instant-wavedrom-d",
+  "preferGlobal": "true",
+  "version": "0.1.0"
+}
